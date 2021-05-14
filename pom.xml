@@ -1015,6 +1015,10 @@
 
         <!--Identity Apps-->
         <authentication.portal.version>1.0.51</authentication.portal.version>
+      
+        <sonar.projectKey>pulasthi7_identity-inbound-auth-oauth</sonar.projectKey>
+        <sonar.organization>pulasthi7</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
 </project>
