@@ -17,10 +17,10 @@ package org.wso2.carbon.identity.openidconnect;
 
 import org.apache.commons.collections.map.HashedMap;
 import org.junit.Assert;
-import org.mockito.internal.util.reflection.Whitebox;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.wso2.carbon.identity.oauth2.TestConstants;
+import org.wso2.carbon.identity.testutil.Whitebox;
 
 import java.util.Calendar;
 import java.util.Map;
@@ -49,7 +49,7 @@ public class RememberMeStoreTest {
     }
 
     @Test
-    public void testStoreTimeOut() {
+    public void testStoreTimeOut() throws Exception {
         long timeInMillis = Calendar.getInstance().getTimeInMillis();
         Map<String, Long> rememberMeMap = new HashedMap();
         rememberMeMap.put(TestConstants.USER_NAME, timeInMillis - 1400000);

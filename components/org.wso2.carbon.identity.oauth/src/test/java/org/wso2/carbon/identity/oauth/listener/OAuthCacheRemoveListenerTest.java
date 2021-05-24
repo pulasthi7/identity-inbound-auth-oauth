@@ -125,7 +125,7 @@ public class OAuthCacheRemoveListenerTest extends PowerMockTestCase {
         listener.entryRemoved((CacheEntryEvent<? extends OAuthCacheKey, ? extends CacheEntry>) cacheEntryObject);
 
         if (((CacheEntryEvent<? extends OAuthCacheKey, ? extends CacheEntry>) cacheEntryObject).getValue() != null) {
-            PowerMockito.verifyStatic();
+            PowerMockito.verifyStatic(OAuthCache.class);
             IdentityUtil.isUserStoreInUsernameCaseSensitive(argumentCaptor.capture());
             assertEquals(argumentCaptor.getValue(), "USER_NAME");
         }

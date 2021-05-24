@@ -22,7 +22,6 @@ import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.oltu.oauth2.as.issuer.OAuthIssuer;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.testng.PowerMockTestCase;
 import org.testng.annotations.BeforeMethod;
@@ -68,7 +67,6 @@ import static org.testng.Assert.assertNotNull;
 
 @WithCarbonHome
 @WithAxisConfiguration
-@PowerMockIgnore({"javax.xml.*", "org.xml.sax.*", "org.w3c.dom.*"})
 @PrepareForTest({OAuthServerConfiguration.class, JDBCPersistenceManager.class, IdentityDatabaseUtil.class,
         RealmService.class})
 public class TokenValidationHandlerTest extends PowerMockTestCase {
