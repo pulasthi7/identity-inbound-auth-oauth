@@ -117,7 +117,7 @@ import static org.wso2.carbon.user.core.UserCoreConstants.DOMAIN_SEPARATOR;
 /**
  * Class which tests SAMLAssertionClaimsCallback.
  */
-@PowerMockIgnore({"javax.xml.*", "org.w3c.*"})
+@PowerMockIgnore({"javax.xml.*", "org.w3c.*", "org.mockito.*"})
 @PrepareForTest({
         AuthorizationGrantCache.class,
         IdentityTenantUtil.class,

@@ -21,6 +21,7 @@ package org.wso2.carbon.identity.oauth2.dao;
 import org.apache.commons.lang.StringUtils;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.testng.IObjectFactory;
 import org.testng.annotations.BeforeClass;
@@ -95,6 +96,7 @@ import static org.wso2.carbon.identity.oauth2.dao.util.DAOConstants.VALID_SCOPE_
 /**
  * Unit tests for TokenMgtDAO.
  */
+@PowerMockIgnore({"org.mockito.*"})
 @WithCarbonHome
 @PrepareForTest({IdentityDatabaseUtil.class, IdentityUtil.class, OAuthServerConfiguration.class, AppInfoCache.class})
 public class TokenMgtDAOTest extends IdentityBaseTest {

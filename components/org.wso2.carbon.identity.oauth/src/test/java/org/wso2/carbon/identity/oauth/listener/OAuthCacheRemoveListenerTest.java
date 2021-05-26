@@ -39,7 +39,7 @@ import java.util.Calendar;
 import javax.cache.Cache;
 import javax.cache.event.CacheEntryEvent;
 
-import static org.mockito.Matchers.anyString;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.MockitoAnnotations.initMocks;
 import static org.powermock.api.mockito.PowerMockito.mock;
 import static org.powermock.api.mockito.PowerMockito.mockStatic;
@@ -125,7 +125,7 @@ public class OAuthCacheRemoveListenerTest extends PowerMockTestCase {
         listener.entryRemoved((CacheEntryEvent<? extends OAuthCacheKey, ? extends CacheEntry>) cacheEntryObject);
 
         if (((CacheEntryEvent<? extends OAuthCacheKey, ? extends CacheEntry>) cacheEntryObject).getValue() != null) {
-            PowerMockito.verifyStatic(OAuthCache.class);
+            PowerMockito.verifyStatic(IdentityUtil.class);
             IdentityUtil.isUserStoreInUsernameCaseSensitive(argumentCaptor.capture());
             assertEquals(argumentCaptor.getValue(), "USER_NAME");
         }

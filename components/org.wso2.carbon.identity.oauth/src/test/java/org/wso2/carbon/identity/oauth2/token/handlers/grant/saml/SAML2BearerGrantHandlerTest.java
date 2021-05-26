@@ -108,7 +108,7 @@ import static org.testng.Assert.fail;
 /**
  * tests for SAML2BearerGrantHandler
  */
-@PowerMockIgnore({"javax.net.*", "javax.xml.*", "org.w3c.*", "org.xml.*"})
+@PowerMockIgnore({"javax.net.*", "javax.xml.*", "org.w3c.*", "org.xml.*", "javax.crypto.*"})
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({IdentityUtil.class, IdentityTenantUtil.class, IdentityProviderManager.class, MultitenantUtils.class,
         IdentityApplicationManagementUtil.class, OAuthServerConfiguration.class, SSOServiceProviderConfigManager.class,

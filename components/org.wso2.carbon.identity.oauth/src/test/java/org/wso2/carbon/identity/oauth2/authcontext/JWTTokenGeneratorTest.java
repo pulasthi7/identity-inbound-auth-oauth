@@ -131,7 +131,7 @@ public class JWTTokenGeneratorTest extends PowerMockIdentityBaseTest {
 
     @Test(dependsOnMethods = "testInit")
     public void testGenerateToken() throws Exception {
-        Whitebox.setInternalState(jwtTokenGenerator, "ttl", 15L);
+        Whitebox.setInternalState(jwtTokenGenerator.getClass(), "ttl", 15L);
         addSampleOauth2Application();
         ClaimCache claimsLocalCache = ClaimCache.getInstance();
         Whitebox.setInternalState(jwtTokenGenerator, "claimsLocalCache", claimsLocalCache);
